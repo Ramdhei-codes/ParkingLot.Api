@@ -1,4 +1,4 @@
-﻿namespace ParkingLot.Domain.Vehicle
+﻿namespace ParkingLot.Domain.Vehicle.Enums
 {
     public enum VehicleType
     {
