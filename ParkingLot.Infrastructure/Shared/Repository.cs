@@ -10,7 +10,7 @@ namespace ParkingLot.Infrastructure.Shared
         private readonly ParkingLotDbContext dbContext;
         private readonly DbSet<T> dbSet;
 
-        public Repository(ParkingLotDbContext dbContext, DbSet<T> dbSet)
+        public Repository(ParkingLotDbContext dbContext)
         {
             this.dbContext = dbContext;
             this.dbSet = dbContext.Set<T>();
