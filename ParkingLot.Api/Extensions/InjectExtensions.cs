@@ -3,6 +3,8 @@ using ParkingLot.Application.Services;
 using ParkingLot.Application.Services.Impl;
 using ParkingLot.Domain.Shared;
 using ParkingLot.Infrastructure.Database;
+using ParkingLot.Infrastructure.Services;
+using ParkingLot.Infrastructure.Services.Impl;
 using ParkingLot.Infrastructure.Shared;
 
 namespace ParkingLot.Api.Extensions
@@ -13,6 +15,9 @@ namespace ParkingLot.Api.Extensions
         {
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<IRegisterVehicleService, RegisterVehicleService>();
+            builder.Services.AddScoped<ICheckInService, CheckInService>();
+            builder.Services.AddScoped<ICheckOutService, CheckOutService>();
+            builder.Services.AddScoped<IPaymentTotal, PaymentTotal>();
             builder.Services.AddDbContext<ParkingLotDbContext>(options => 
             options.UseSqlServer(builder.Configuration.GetConnectionString("connParkingDB")));
         }
